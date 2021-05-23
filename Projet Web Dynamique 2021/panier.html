@@ -2,8 +2,74 @@
 <html>
 <head>
 	<title>Panier</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		#header3 {
+			background-color: white;
+		    color: black;
+		    text-align: center;
+		    padding: 0px;
+		}
+
+		#footer3 {
+			position: absolute;
+			width: 100%;
+			background-color: white;
+			color: black;
+			clear: both;
+			text-align: center;
+			padding: 0px;
+			bottom: 0px;
+		}
+
+		.bouton{
+			background-color:violet;
+			border: solid;
+			color: black;
+			padding: 10px;
+			margin: 10px;
+			text-align: center;
+			display: inline-block;
+			font-size: 20px;
+			cursor: pointer;
+		}
+
+		#clearAll{
+			background-color:#FF0000;
+			border:solid;
+			color:black;
+			padding: 10px;
+			margin: 5px;
+			text-align: center;
+			display: inline-block;
+			font-size: 20px;
+			cursor: pointer;
+		}
+
+		#payAll{
+			background-color:#32CD32;
+			border:solid;
+			color:black;
+			padding: 10px;
+			margin: 5px;
+			text-align: center;
+			display: inline-block;
+			font-size: 20px;
+			cursor: pointer;
+		}
+
+	</style>
 </head>
 <body>
+	<div id="header3" align="center">
+		<a href="accueil.html" class="bouton" style="width: 250px">Retour</a>
+		<h1>Votre Panier:</h1>
+	</div>
 
+
+	<div id="footer3">
+		<input type="button" value="vider le Panier" style="width: 150px"  id="clearAll">
+		<input type="button" value="Payer" style="width: 150px" id="payAll">
+	</div>
 </body>
 </html>
