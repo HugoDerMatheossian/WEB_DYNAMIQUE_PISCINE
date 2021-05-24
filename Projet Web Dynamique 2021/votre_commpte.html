@@ -1,9 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Compte</title>
+<meta charset="utf-8" />
+	<style type="text/css">
+		#header4 {
+			background-color: white;
+		    color: black;
+		    text-align: center;
+		    padding: 0px;
+		}
+
+		#footer4 {
+			width: 100%;
+			background-color: white;
+			color: black;
+			clear: both;
+			text-align: center;
+			padding: 0px;
+			bottom: 0px;
+		}
+
+		.bouton{
+			background-color:violet;
+			border: solid;
+			color: black;
+			padding: 10px;
+			margin: 10px;
+			text-align: center;
+			display: inline-block;
+			font-size: 20px;
+			cursor: pointer;
+		}
+		#admin{
+			background-color:#00FA9A;
+			border:solid;
+			color:black;
+			padding: 10px;
+			margin: 5px;
+			text-align: center;
+			display: inline-block;
+			font-size: 20px;
+			cursor: pointer;
+		}
+		#seller{
+			background-color:#4169E1;
+			border:solid;
+			color:black;
+			padding: 10px;
+			margin: 5px;
+			text-align: center;
+			display: inline-block;
+			font-size: 20px;
+			cursor: pointer;
+		}
+		#buyer{
+			background-color:#800000;
+			border:solid;
+			color:black;
+			padding: 10px;
+			margin: 5px;
+			text-align: center;
+			display: inline-block;
+			font-size: 20px;
+			cursor: pointer;
+		}
+</style>
 </head>
 <body>
-
+	<div id="header4" align="center">
+		<a href="accueil.html" class="bouton" style="width: 250px">Retour</a>
+		<h1><em>Enregistrement/Connection:</em></h1>
+	</div>
+	<div id="footer4">
+		<form>
+			<table>
+				<tr>cliquez sur l'option qui correspond à votre type de compte SVP ou rentrez le mot de passe administrateur:</tr>
+				<br>
+				<tr>
+					<input type="button" value="vendeur" id="seller" style="width: 250px">
+					<input type="button" value="administrateur" id="admin"style="width: 250px">
+					<input type="button" value="acheteur" id="buyer" style="width: 250px">
+				</tr>
+				<br>
+				<tr>
+					<input type="password" id="adminPassword">
+				</tr>
+			</table>
+		</form>
+	</div>
 </body>
 </html>
