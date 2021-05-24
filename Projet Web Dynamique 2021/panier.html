@@ -57,15 +57,76 @@
 			font-size: 20px;
 			cursor: pointer;
 		}
-
+		table {
+			margin: auto;
+			background-color:gray;
+			color: black;
+			width: 1000px;
+			max-width: 1000px;
+			height: 450px;
+			text-align: center;
+			border-radius: 4px;
+			padding-top: 10px; 
+			border-collapse: collapse;
+		}
+		td, th	 {
+			border: 1px solid black;
+		}
 	</style>
 </head>
 <body>
 	<div id="header3" align="center">
 		<a href="accueil.html" class="bouton" style="width: 250px">Retour</a>
-		<h1>Votre Panier:</h1>
+		<h1><em>Votre Panier:</em></h1>
 	</div>
-
+	<div id="nav3">
+		<hr>
+		<form>
+			<table>
+				<tr>
+					<th style="background-color:#8B0000"> </th>
+					<th style="background-color:#FF4500">Articles</th>
+					<th style="background-color:#FFD700">Prix</th>
+				</tr>
+				<tr>
+					<td>image1</td>
+					<td>Article1</td>
+					<td>Prix1</td>
+				</tr>
+				<tr>
+					<td>image2</td>
+					<td>Article2</td>
+					<td>Prix2</td>
+				</tr>
+				<tr>
+					<td>image3</td>
+					<td>Article3</td>
+					<td>Prix3</td>
+				</tr>
+				<tr>
+					<td>image4</td>
+					<td>Article4</td>
+					<td>Prix4</td>
+				</tr>
+				<tr>
+					<td>image5</td>
+					<td>Article5</td>
+					<td>Prix5</td>
+				</tr>
+				<tr>
+					<td>image6</td>
+					<td>Article6</td>
+					<td>Prix6</td>
+				</tr>
+				<tr>
+					<td>X</td>
+					<td>Nombre d'articles</td>
+					<td>Sous-Total:</td>
+				</tr>
+			</table>
+		</form>
+	    </hr>
+	</div>
 
 	<div id="footer3">
 		<input type="button" value="vider le Panier" style="width: 150px"  id="clearAll">
