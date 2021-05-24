@@ -1,0 +1,68 @@
+<?php
+	//recuprer les données venant de votre formulaire
+	$nom = isset($_POST["nom"])? $_POST["ID"] : "";
+	$description= isset($_POST["description"])? $_POST["image"] : "";
+	$ID = isset($_POST["ID"])? $_POST["ID"] : "";
+ 	$prix = isset($_POST["prix"])? $_POST["prix"] : "";
+ 	$image= isset($_POST["image"])? $_POST["image"] : "";
+ 	$video= isset($_POST["video"])? $_POST["image"] : "";
+ 	$image= isset($_POST["categorie"])? $_POST["categorie"] : "";
+	//identifier votre BDD
+	$database = "items";
+
+	//connectez-vous de la BDD
+
+	$db_handle = mysqli_connect('localhost', 'root', '');
+	$db_found = mysqli_select_db($db_handle, $database);
+	
+	//si le bouton est cliqué
+	if (isset($_POST["button1"])) {
+		//si la BDD existe
+		if ($db_found) {
+			if ($ != "") {
+			if ($ != "") {
+				//on cherche l'objet
+				// faire les requetes apres
+			}
+			$result = mysqli_query($db_handle, $sql);
+			//regarder s'il y a des résultats
+				if (mysqli_num_rows($result) == 0) {
+				/	/pas de résultat
+				echo "Pas d'item trouvé". <br>";
+		} else {
+			echo "<table border='1'>";
+			echo "<tr>";
+			echo "<th>" . "nom" . "</th>";
+			echo "<th>" . "ID" . "</th>";
+			echo "<th>" . "photo" . "</th>";
+			echo "<th>" . "descriptions" . "</th>";
+			echo "<th>" . "categorie" . "</th>";
+			echo "<th>" . "image" . "</th>";
+			echo "<th>" . "video" . "</th>";
+			echo "<th>" . "prix" . "</th>";
+			echo "</tr>";
+			//afficher les résultats
+			while ($data = mysqli_fetch_assoc($result)) {
+				echo "<tr>";
+				echo "<td>" . $data['ID'] . "</td>";
+				echo "<td>" . $data['nom'] . "</td>";
+				echo "<td>" . $data['categorie'] . "</td>";
+				echo "<td>" . $data['prix'] . "</td>";
+				echo "<td>" . $data['video'] . "</td>";
+				echo "<td>" . $data['description'] . "</td>";
+				$image = $data['ImgItem'];
+				echo "<td>" . "<img src='$image' height='120' width='100'>" . 
+				$video = $date['videoitem'];
+				echo "<td>" . "<vid src='$video' 
+	"</td>";
+				echo "</tr>";
+			}
+			echo "</table>";
+		}
+	} else {
+		echo "Database not found. <br>";
+	}
+			}
+	//fermer la connexion
+	mysqli_close($db_handle);
+?>
