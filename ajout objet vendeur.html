@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ajout objet vendeur</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="ajout objet vendeur html.css">
+	</head>
+<body>
+	<h2>Ajout d'un objet vendeur</h2>
+	<form action="ajout objet vendeur.php" method="post">
+		<div>
+			Créer un objet
+		</div>
+		<table>
+			<tr>
+				<td>ID Vendeur :</td>
+				<td><input type="text" name="vendeur"></td>
+			</tr>
+			<tr>
+				<td>Nom :</td>
+				<td><input type="text" name="nom"</td>
+			</tr>
+			<tr>
+				<td>Description :</td>
+				<td><input type="text" name="description"</td>
+			</tr>
+			<tr>
+				<td>Prix :</td>
+				<td><input type="number" name="prix"</td>
+			</tr>
+			<tr>
+				<td>Unités :</td>
+				<td><input type="number" name="unites"</td>
+			</tr>
+			<tr>	
+				<td>Catégorie :</td>
+				<td>
+					<select name="categorie" id="categorie">
+					<option value="">--Choisissez une catégorie--</option>
+					<option value="meubles et objets d'art">Meubles et objets d'art</option>
+					<option value="accessoire vip">Accessoire VIP</option>
+					<option value="materiels scolaires">Matériels scolaires</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Image :</td>
+				<td><input type="text" name="image" accept=".png,.jpg,.jpeg"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="boutton1" id="submit" value="Ajouter"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

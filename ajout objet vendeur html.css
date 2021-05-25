@@ -1,0 +1,46 @@
+h2 
+{
+	text-align: center;
+}
+
+body
+{
+	background-color: #33B6FF;
+}
+
+form
+{
+	border-width:2px; 
+ 	border-style:solid; 
+ 	border-color:black;
+ 	width:60%;
+ 	margin: auto;
+ 	background-color: white;
+ 	padding-bottom: 10px;
+ 	padding-top: 10px;
+}
+
+#submit
+{
+	background-color: #3370FF;
+	color: white;
+	outline-color: #3370FF;
+	border: none;
+	box-shadow: 1px 1px 1px 1px black;
+}
+
+table
+{
+	margin: auto;
+	text-align: center;
+	width: 80%;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+div
+{
+ 	text-align: center;
+ 	font-weight: bold;
+ 	padding-bottom: 10px;
+}
