@@ -1,17 +1,19 @@
 <?php
 	//recuprer les données venant de votre formulaire
-	$nometprenom = isset($_POST["Nom et prénom"])? $_POST["nom et prenom"] : "";
-	$adressligne1= isset($_POST["adressligne1"])? $_POST["adressligne1"] : "";
-	$adressligne2 = isset($_POST["adressligne2"])? $_POST["adressligne2"] : "";
+echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"ajout objet vendeur php.css\">";
+
+	$nometprenom = isset($_POST["Nom_et_prénom"])? $_POST["Nom_et_prénom"] : "";
+	$adresseligne1= isset($_POST["adresse_Ligne1"])? $_POST["adresse_Ligne1"] : "";
+	$adresseligne2 = isset($_POST["adresse_ligne2"])? $_POST["adresse_ligne2"] : "";
  	$Ville = isset($_POST["Ville"])? $_POST["Ville"] : "";
- 	$codepostale= isset($_POST["codepostale"])? $_POST["codepostale"] : "";
+ 	$codepostale= isset($_POST["code_postale"])? $_POST["code_postale"] : "";
  	$pays= isset($_POST["pays"])? $_POST["pays"] : "";
- 	$typedepaiement= isset($_POST["typedepaiement"])? $_POST["typedepaiement"] : "";
- 	$numcarte= isset($_POST["numcarte"])? $_POST["numcarte"] : "";
- 	$nomsurlacarte= isset($_POST["nomsurlacarte"])? $_POST["nomsurlacarte"] : "";
- 	$codedesecurite= isset($_POST["codedesecurite"])? $_POST["codedesecurite"] : "";
- 	$datedexpiration= isset($_POST["datedexpiration"])? $_POST["datedexpiration"] : "";
- 	$telephone= isset($_POST["telephone"])? $_POST["telephone"] : "";
+ 	$typedepaiement= isset($_POST["type_de_paiement"])? $_POST["type_de_paiement"] : "";
+ 	$numcarte= isset($_POST["num_carte"])? $_POST["num_carte"] : "";
+ 	$nomsurlacarte= isset($_POST["nom_sur_la_carte"])? $_POST["nom_sur_la_carte"] : "";
+ 	$codedesecurite= isset($_POST["code_de_sécurité"])? $_POST["code_de_sécurité"] : "";
+ 	$datedexpiration= isset($_POST["date_dexpiration"])? $_POST["date_dexpiration"] : "";
+ 	$telephone= isset($_POST['Telephone'])? $_POST["Telephone"] : "";
 	//identifier votre BDD
 	$database = "acheteurs";
 
@@ -20,57 +22,80 @@
 	$db_handle = mysqli_connect('localhost', 'root', '');
 	$db_found = mysqli_select_db($db_handle, $database);
 	
-	//si le bouton est cliqué
+	//si le boutton 1 est appuyé
 	if (isset($_POST["button1"])) {
-		//si la BDD existe
-		if ($db_found) {
-			if ($ != "") {
-			if ($ != "") {
-				//on cherche l'objet
-				// faire les requetes apres
+	if ($db_found) {
+	//on cherche cet acheteur dans notre BDD
+		$sql = "SELECT * FROM `acheteurs`";
+		// avec ses nom prenom et son num de carte
+		if ($nometprenom != ""){
+		$sql .= " WHERE Nometprenom LIKE '%$nometprenom%'";
+		if ($numcarte!= "") {
+			$sql .= " AND numerodecarte LIKE '%$numcarte%'";
 			}
-			$result = mysqli_query($db_handle, $sql);
-			//regarder s'il y a des résultats
-				if (mysqli_num_rows($result) == 0) {
-				/	/pas de résultat
-				echo "Pas d'item trouvé". "<br>";
-		} else {
-			echo "<table border='1'>";
+		}
+		$result = mysqli_query($db_handle, $sql);
+		//regarder s'il y a des résultats
+		if (mysqli_num_rows($result) != 0) {
+		//cet acheteur existe déjà dans notre BDD
+		echo "cet acheteur est deja present on ne peut pas le dedouble. <br>";
+	} else {
+		//on ajoute cet acheteur dans notre BDD
+		$sql = "INSERT INTO `acheteurs`(Nometprenom, adresseLigne1, adresseligne2, Ville, Codepostale, Pays, typedecartedepaiement, numerodecarte, Nomsurlacarte, datedexpiration, Codesecurite, Numerodetelephone) VALUES ('$nometprenom','$adresse_Ligne1','$adresseligne2','$Ville','$codepostale','$pays','$typedepaiement','$numcarte','$nomsurlacarte','$datedexpiration','$codedesecurite','$telephone')";
+		$result = mysqli_query($db_handle, $sql);
+		echo "Votre experience d'acheteur sut notre site commence maintenant. <br>";
+
+		//on affiche le nouvel acheteur ajouté
+		$sql = "SELECT * FROM `acheteurs`";
+		// avec ses titre et auteurs
+		if ($nometprenom != ""){
+			$sql .= " WHERE Nometprenom LIKE '%$nometprenom%'";
+			if ($numcarte != "") {
+				$sql .= " AND numerodecarte LIKE '%$numcarte%'";
+		}
+	}
+	$result = mysqli_query($db_handle,$sql);
+			echo "<h1>informations nouvel acheteur ajoute</h1>";
+			echo"<table>";
 			echo "<tr>";
-			echo "<th>" . "nometprenom" . "</th>";
-			echo "<th>" . "adressligne1" . "</th>";
-			echo "<th>" . "adressligne2" . "</th>";
+			echo "<th>" . "Nom et prenom" . "</th>";
+			echo "<th>" . "adresse ligne1" . "</th>";
+			echo "<th>" . "adresse ligne2" . "</th>";
 			echo "<th>" . "Ville" . "</th>";
+			echo "<th>" . "Code Postale" . "</th>";
 			echo "<th>" . "pays" . "</th>";
-			echo "<th>" . "typedepaiement" . "</th>";
-			echo "<th>" . "numcarte" . "</th>";
-			echo "<th>" . "nomsurlacarte" . "</th>";
-			echo "<th>" . "codedesecurite" . "</th>";
-			echo "<th>" . "datedexpiration" . "</th>";
-			echo "<th>" . "telephone" . "</th>";
+			echo "<th>" . "type de paiement" . "</th>";
+			echo "<th>" . "num carte" . "</th>";
+			echo "<th>" . "nom sur la carte" . "</th>";
+			echo "<th>" . "code de securite" . "</th>";
+			echo "<th>" . "date d'expiration" . "</th>";
+			echo "<th>" . "Telephone" . "</th>";
 			echo "</tr>";
 			//afficher les résultats
 			while ($data = mysqli_fetch_assoc($result)) {
 				echo "<tr>";
-				echo "<td>" . $data['nometprenom'] . "</td>";
-				echo "<td>" . $data['adressligne1'] . "</td>";
-				echo "<td>" . $data['adressligne2'] . "</td>";
+				echo "<td>" . $data['Nometprenom'] . "</td>";
+				echo "<td>" . $data['adresseLigne1'] . "</td>";
+				echo "<td>" . $data['adresseligne2'] . "</td>";
 				echo "<td>" . $data['Ville'] . "</td>";
-				echo "<td>" . $data['pays'] . "</td>";
-				echo "<td>" . $data['typedepaiement'] . "</td>";
-				echo "<td>" . $data['nomsurlacarte'] . "</td>";
-				echo "<td>" . $data['codedesecurite'] . "</td>";
+				echo "<td>" . $data['CodePostale'] . "</td>";
+				echo "<td>" . $data['Pays'] . "</td>";
+				echo "<td>" . $data['typedecartepaiement'] . "</td>";
+				echo "<td>" . $data['numerodecarte'] . "</td>";
+				echo "<td>" . $data['Nomsurlacarte'] . "</td>";
+				echo "<td>" . $data['Codesecurite'] . "</td>";
 				echo "<td>" . $data['datedexpiration'] . "</td>";
-				echo "<td>" . $data['telephone'] . "</td>";
-	"</td>";
+				echo "<td>" . $data['Numerodetelephone'] . "</td>";
+				
 				echo "</tr>";
 			}
-			echo "</table>";
-		}
-	} else {
+			echo "</table>";	
+	}
+			} 
+			else {
 		echo "Database not found. <br>";
 	}
-			}
 	//fermer la connexion
 	mysqli_close($db_handle);
+	} 
 ?>
