@@ -55,7 +55,7 @@
 			cursor: pointer;
 		}
 		#buyer{
-			background-color:#800000;
+			background-color:#A52A2A;
 			border:solid;
 			color:black;
 			padding: 10px;
@@ -73,21 +73,22 @@
 		<h1><em>Enregistrement/Connection:</em></h1>
 	</div>
 	<div id="footer4">
-		<form>
+		<form action="loginAdmin.php" method="post">
 			<table>
 				<tr>cliquez sur l'option qui correspond à votre type de compte SVP ou rentrez le mot de passe administrateur:</tr>
 				<br>
 				<tr>
-					<input type="button" value="vendeur" id="seller" style="width: 250px">
-					<input type="button" value="administrateur" id="admin"style="width: 250px">
-					<input type="button" value="acheteur" id="buyer" style="width: 250px">
+					<input type="button" onclick="window.location.href='formulaire vendeur.html' "value="vendeur" id="seller" style="width: 250px" >
+					<input type="button" onclick="window.location.href='loginAdmin.php' "value="administrateur" id="admin"style="width: 250px">
+					<input type="button" onclick="window.location.href='Acheteurs.html' "value="acheteur" id="buyer"style="width: 250px">
 				</tr>
 				<br>
 				<tr>
-					<input type="password" id="adminPassword">
+					Rentrer le mot de passe ci-dessous SVP:<br/>
+					Mot de Passe: <input type="text" name="mdp"/>
+					<input type="submit" name="login" value="login"/>
 				</tr>
 			</table>
-		</form>
 	</div>
 </body>
 </html>
