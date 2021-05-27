@@ -3,10 +3,10 @@
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"ajout objet vendeur php.css\">";
 
 	$nometprenom = isset($_POST["Nom_et_prénom"])? $_POST["Nom_et_prénom"] : "";
-	$adresseligne1= isset($_POST["adresse_Ligne1"])? $_POST["adresse_Ligne1"] : "";
+	$adresseligne1= isset($_POST["adresse_ligne1"])? $_POST["adresse_ligne1"] : "";
 	$adresseligne2 = isset($_POST["adresse_ligne2"])? $_POST["adresse_ligne2"] : "";
  	$Ville = isset($_POST["Ville"])? $_POST["Ville"] : "";
- 	$codepostale= isset($_POST["code_postale"])? $_POST["code_postale"] : "";
+ 	$Codepostale= isset($_POST["code_postale"])? $_POST["code_postale"] : "";
  	$pays= isset($_POST["pays"])? $_POST["pays"] : "";
  	$typedepaiement= isset($_POST["type_de_paiement"])? $_POST["type_de_paiement"] : "";
  	$numcarte= isset($_POST["num_carte"])? $_POST["num_carte"] : "";
@@ -41,13 +41,13 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"ajout objet vendeur php.
 		echo "cet acheteur est deja present on ne peut pas le dedouble. <br>";
 	} else {
 		//on ajoute cet acheteur dans notre BDD
-		$sql = "INSERT INTO `acheteurs`(Nometprenom, adresseLigne1, adresseligne2, Ville, Codepostale, Pays, typedecartedepaiement, numerodecarte, Nomsurlacarte, datedexpiration, Codesecurite, Numerodetelephone) VALUES ('$nometprenom','$adresse_Ligne1','$adresseligne2','$Ville','$codepostale','$pays','$typedepaiement','$numcarte','$nomsurlacarte','$datedexpiration','$codedesecurite','$telephone')";
+		$sql = "INSERT INTO `acheteurs`(Nometprenom, adresseligne1, adresseligne2, Ville, Codepostale, Pays, typedecartedepaiement, numerodecarte, Nomsurlacarte, datedexpiration, Codesecurite, Numerodetelephone) VALUES ('$nometprenom','$adresseligne1','$adresseligne2','$Ville','$Codepostale','$pays','$typedepaiement','$numcarte','$nomsurlacarte','$datedexpiration','$codedesecurite','$telephone')";
 		$result = mysqli_query($db_handle, $sql);
 		echo "Votre experience d'acheteur sut notre site commence maintenant. <br>";
 
 		//on affiche le nouvel acheteur ajouté
 		$sql = "SELECT * FROM `acheteurs`";
-		// avec ses titre et auteurs
+		// avec ses nom et prénom et numéro de carte
 		if ($nometprenom != ""){
 			$sql .= " WHERE Nometprenom LIKE '%$nometprenom%'";
 			if ($numcarte != "") {
@@ -75,7 +75,7 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"ajout objet vendeur php.
 			while ($data = mysqli_fetch_assoc($result)) {
 				echo "<tr>";
 				echo "<td>" . $data['Nometprenom'] . "</td>";
-				echo "<td>" . $data['adresseLigne1'] . "</td>";
+				echo "<td>" . $data['adresseligne1'] . "</td>";
 				echo "<td>" . $data['adresseligne2'] . "</td>";
 				echo "<td>" . $data['Ville'] . "</td>";
 				echo "<td>" . $data['CodePostale'] . "</td>";
