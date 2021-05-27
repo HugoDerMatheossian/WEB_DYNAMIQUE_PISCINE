@@ -3,10 +3,64 @@
 <head>
 <title>Acheteurs</title>
 <meta charset="utf-8">
+<style type="text/css">
+
+#header7 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 5px;
+}
+
+#nav7 {
+line-height: 30px;
+background-color: #eeeeee;
+height: 750px;
+width: 50%; 
+float: left;
+padding: 5px;
+}
+
+}
+#section7 {
+background-color: #cccccc;
+width: auto;
+padding: 5px;
+height: 750px;
+}
+
+#footer7 {
+background-color: black;
+color: white;
+clear: left;
+text-align: center;
+padding: 10px;
+}
+
+.bouton{
+		background-color:violet;
+	    border: solid;
+		color: black;
+		padding: 10px;
+		margin: 10px;
+		text-align: center;
+		display: inline-block;
+		font-size: 20px;
+		cursor: pointer;
+}
+
+
+</style>
+
 	</head>
 <body>
-	<h2> Acheteurs </h2>
-	<form action="Acheteurs.php" method="post">
+	<div id="header7">
+		<h1> Page Acheteurs </h1>
+	</div>
+
+	<div id="nav7">
+		<h3> Inscription Acheteur:</h3></br>
+		<form action="Acheteurs.php" method="post">
 		<table>
 			<tr>
 				<td>Nom et prenom:</td>
@@ -67,4 +121,33 @@
 			</tr>
 		</table>
 	</form>
+	</div>
+
+	<div id="section7">
+		<h3>Connexion Acheteur:</h3></br>
+		<form action="" method="post">
+			<table>
+				<tr>
+				    <td>Nom et prenom:</td>
+				    <td><input type="text" name="Nom_et_prénom"></td>
+			    </tr>
+			    <tr>
+				    <td>Telephone:</td>
+				    <td><input type="text" name="Telephone"></td>
+			    </tr>
+			    <tr>
+				    <td>&nbsp;</td>
+				    <td>&nbsp;</td>
+			    </tr>
+			    <tr>
+				    <td colspan="2" align="center">
+					    <input type="submit" name="button4" value="Log in">
+				    </td>
+			    </tr>
+			</table>
+		</form>
+	</div>
+	<div id="footer7">
+		<a href="votre_commpte.html"  name="button5" class="bouton" style="width: 250px">Retour</a>
+	</div>
 </body
