@@ -5,5 +5,33 @@
 </head>
 <body>
 	<h1><em>Page de l'administrateur:</em></h1>
+	<form action="admin.php" method="post">
+		<table>
+			<tr>
+				<td><small><em>Management des comptes vendeurs:</em></small></td>
+			</tr>
+			<tr>
+				<td>Pseudo:</td>
+				<td><input type="text" name="PseudoSeller"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" name="EmailSeller"></td>
+			</tr>
+			<tr>
+				<td>Mot de passe:</td>
+				<td><input type="text" name="mdpSeller"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" name="button2" value="Ajouter">
+					<input type="submit" name="button3" value="Supprimer">
+				</td>
+			</tr>
+		</table>
+	</form>
 </body>
-</html>
