@@ -67,7 +67,8 @@ mysqli_close($db_handle);
 		if (mysqli_num_rows($result) != 0) {
 		//cet vendeur existe déjà dans notre BDD
 		//on supprime ce vendeur dans notre BDD
-			$sql = "DELETE FROM `vendeurs`(Pseudo,Email,MotDePasse) WHERE (Pseudo='$pseudo'AND Email='$email'AND MotDePasse='$mdp')";
+			$sql = "DELETE FROM `vendeurs` WHERE (Pseudo LIKE '%$pseudo' ) AND ( Email LIKE '%$email' ) ";
+			mysqli_query( $db_handle , $sql );
 		    echo "ce vendeur s'est fait supprimer. <br>";
 		
 		}else{
