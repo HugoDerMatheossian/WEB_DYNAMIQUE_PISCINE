@@ -1,0 +1,36 @@
+ul > li
+{
+	list-style: none;
+}
+
+.objet
+{
+	margin-top: 5%;
+	margin-left: 25%;
+}
+
+img
+{
+	witdh: 300px;
+	height: 300px;
+}
+
+table
+{
+	border-collapse: separate;
+	border-spacing: 50px 10px;
+	font-size: 25px;
+}
+
+.btn
+{
+	margin-left: 40%;
+	font-size: 20px;
+}
+
+#btn1
+{
+	margin-left: 38%;
+	margin-top: 4%;
+	font-size: 20px;
+}
