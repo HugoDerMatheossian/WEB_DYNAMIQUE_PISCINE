@@ -3,10 +3,27 @@
 <head>
     <title>information vendeur</title>
     <meta charset="utf-8">
+    <style type="text/css">
+    body{
+        background-color: #eeeeee;
+    }
+    .bouton{
+            background-color:violet;
+            border: solid;
+            color: black;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+    }
+
+    </style>
 </head>
 <body>
-    <h3>Vendeur:</h3>
-    <form action ="traitement.php" methode="post"
+    <h3>Connexion Vendeur:</h3>
+    <form action ="pass.php" methode="post">
         <table>
             <tr>
                 <td>pseudo:</td>
@@ -26,5 +43,6 @@
             </tr>
         </table>
     </form>
+    <a href="votre_commpte.html"  name="button5" class="bouton" style="width: 250px">Retour</a>
 </body>
 </html>
