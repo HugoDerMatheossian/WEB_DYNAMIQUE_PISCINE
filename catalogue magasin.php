@@ -100,7 +100,7 @@
         	</select>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+        <li><a href="panier.html"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
       </ul>
     </div>
   </div>
