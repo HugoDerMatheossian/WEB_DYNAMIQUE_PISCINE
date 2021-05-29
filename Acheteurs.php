@@ -14,6 +14,8 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"ajout objet vendeur php.
  	$codedesecurite= isset($_POST["code_de_sécurité"])? $_POST["code_de_sécurité"] : "";
  	$datedexpiration= isset($_POST["date_dexpiration"])? $_POST["date_dexpiration"] : "";
  	$telephone= isset($_POST['Telephone'])? $_POST["Telephone"] : "";
+ 	$pseudo= isset($_POST['pseudo'])? $_POST["pseudo"] : "";
+ 	$mdp= isset($_POST['mdp'])? $_POST["mdp"] : "";
 	//identifier votre BDD
 	$database = "acheteurs";
 
@@ -41,7 +43,7 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"ajout objet vendeur php.
 		echo "cet acheteur est deja present on ne peut pas le dedouble. <br>";
 	} else {
 		//on ajoute cet acheteur dans notre BDD
-		$sql = "INSERT INTO `acheteurs`(Nometprenom, adresseligne1, adresseligne2, Ville, Codepostale, Pays, typedecartedepaiement, numerodecarte, Nomsurlacarte, datedexpiration, Codesecurite, Numerodetelephone) VALUES ('$nometprenom','$adresseligne1','$adresseligne2','$Ville','$Codepostale','$pays','$typedepaiement','$numcarte','$nomsurlacarte','$datedexpiration','$codedesecurite','$telephone')";
+		$sql = "INSERT INTO `acheteurs`(Nometprenom, adresseligne1, adresseligne2, Ville, Codepostale, Pays, typedecartedepaiement, numerodecarte, Nomsurlacarte, datedexpiration, Codesecurite, Numerodetelephone,Pseudo,MDP) VALUES ('$nometprenom','$adresseligne1','$adresseligne2','$Ville','$Codepostale','$pays','$typedepaiement','$numcarte','$nomsurlacarte','$datedexpiration','$codedesecurite','$telephone','$pseudo','$mdp')";
 		$result = mysqli_query($db_handle, $sql);
 		echo "Votre experience d'acheteur sut notre site commence maintenant. <br>";
 
@@ -70,6 +72,8 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"ajout objet vendeur php.
 			echo "<th>" . "code de securite" . "</th>";
 			echo "<th>" . "date d'expiration" . "</th>";
 			echo "<th>" . "Telephone" . "</th>";
+			echo "<th>" . "Pseudo" . "</th>";
+			echo "<th>" . "Mot de passe" . "</th>";
 			echo "</tr>";
 			//afficher les résultats
 			while ($data = mysqli_fetch_assoc($result)) {
@@ -86,6 +90,8 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"ajout objet vendeur php.
 				echo "<td>" . $data['Codesecurite'] . "</td>";
 				echo "<td>" . $data['datedexpiration'] . "</td>";
 				echo "<td>" . $data['Numerodetelephone'] . "</td>";
+				echo "<td>" . $data['Pseudo'] . "</td>";
+				echo "<td>" . $data['MDP'] . "</td>";
 				
 				echo "</tr>";
 			}
