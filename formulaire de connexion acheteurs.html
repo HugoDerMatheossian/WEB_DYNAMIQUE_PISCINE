@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Connexion</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>ECE Market Place</h1>      
+            <p>Trouver, négocier, acheter</p>
+        </div>
+    </div>
+
+    <nav class="Barre de navigation navbar-inverse">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="votre_commpte.html"><span class="glyphicon glyphicon-user"></span> Votre compte</a>
+            </li>
+            <li>
+                <a href="panier.html"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="wrapper fadeInDown">
+        <form action="formulaire de connexion acheteurs.php" method="post">
+          <input type="text" name="pseudo" placeholder="Nom d'utilisateur"></input>
+          <input type="text" name="MotDePasse" placeholder="Mot de passe"></input>
+          <input type="submit" value="Se connecter"></input>
+        </form>
+    </div>
+  </body>
+</html>
