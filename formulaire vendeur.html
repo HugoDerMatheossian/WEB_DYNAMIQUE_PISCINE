@@ -3,46 +3,55 @@
 <head>
     <title>information vendeur</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style type="text/css">
-    body{
-        background-color: #eeeeee;
-    }
     .bouton{
-            background-color:violet;
             border: solid;
             color: black;
-            padding: 10px;
-            margin: 10px;
+            padding: 5px;
+            margin: 5px;
             text-align: center;
             display: inline-block;
-            font-size: 20px;
+            font-size: 15px;
             cursor: pointer;
     }
-
     </style>
+
 </head>
 <body>
-    <h3>Connexion Vendeur:</h3>
-    <form action ="pass.php" methode="post">
-        <table>
-            <tr>
-                <td>pseudo:</td>
-                <td><input type="text" name="pseudo"></td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td><input type="text" name="email"></td>
-            </tr>
-            <tr>
-                <td>MotDePasse:</td>
-                <td><input type="text" name="mot de passe"></td>
-            </tr>
-            <tr>
-             
-                <td colspan="2" align="center"><input type="submit" name="valider"></td>
-            </tr>
-        </table>
-    </form>
-    <a href="votre_commpte.html"  name="button5" class="bouton" style="width: 250px">Retour</a>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>ECE Market Place</h1>      
+            <p>Trouver, négocier, acheter</p>
+        </div>
+    </div>
+
+    <nav class="Barre de navigation navbar-inverse">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="votre_commpte.html"><span class="glyphicon glyphicon-user"></span> Votre compte</a>
+            </li>
+            <li>
+                <a href="panier.html"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="wrapper fadeInDown">
+        <h3>Connexion Vendeur:</h3>
+        <form action="formulaire vendeur.php" method="post">
+          <input type="text" name="pseudo" placeholder="Nom d'utilisateur"></input>
+          <input type="text" name="MotDePasse" placeholder="Mot de passe"></input>
+          <input type="submit" value="Se connecter"></input>
+        </form>
+    </div>
+
+     <a href="votre_commpte.html"  name="button5" class="bouton" style="width: 100px">Retour</a>
 </body>
 </html>
