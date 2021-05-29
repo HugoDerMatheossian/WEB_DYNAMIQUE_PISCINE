@@ -150,8 +150,8 @@
   				</form>
 
   			</li>
-        <li><a href="panier.php"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
-        <li><a href="votre_commpte.html"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+        <li><a href="votre_commpte.html"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
+        <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
       </ul>
     </div>
   </div>
