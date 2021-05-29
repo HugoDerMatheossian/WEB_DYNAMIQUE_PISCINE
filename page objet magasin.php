@@ -47,8 +47,8 @@
 	  <div class="container-fluid">
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="panier.html"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
-	        <li><a href="votre_commpte.html"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+	        <li><a href="votre_commpte.html"><span class="glyphicon glyphicon-user"></span> Votre compte</a></li>
+	        <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
 	      </ul>
 	    </div>
 	  </div>
@@ -79,7 +79,7 @@
 		<form action="panier.php" method="post">
 			<input type="hidden" name="ID" value="<?php echo "$ID" ?>"></input>
 			<input type="hidden" name="nom" value="<?php echo "$nom" ?>"></input>
-			<input type="submit" name="addpanier" value="Ajouter au panier" id="btn1"></input>
+			<input type="submit" name="btn1" value="Ajouter au panier" id="btn1"></input>
 		</form>
 		<a href="catalogue magasin.php" class="btn">Retour</a>
 	</div>
