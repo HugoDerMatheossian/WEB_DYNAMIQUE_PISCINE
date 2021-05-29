@@ -63,6 +63,9 @@
 
 			$_SESSION['login'] = $_POST['pseudo'];
 			$_SESSION['pass'] = $_POST['MotDePasse'];
+			echo '<meta http-equiv="refresh" content="5;URL=page vendeur.html">';
+			echo "<br>";
+			echo "Redirection vers la page vendeur personnelle dans 5 secondes";
 		} 
 		else 
 		{
