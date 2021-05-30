@@ -1,0 +1,21 @@
+
+body {
+		background-color: #1c2833;
+		background-image: url('https://rainbowflowersaz.com/pic/4526119_full-image-de-printemps-pour-fond-d-ecran-gratuit-a-telecharger-fond-d-ecran-de-paysage-24-images-de-fond-d-ecran-pour-ordinateur.jpg');
+		margin:0;
+
+}
+.container{
+	position: relative;
+}
+
+
+.container img{
+	width:450px; height:350px;
+
+}
+.nom{
+	color: white;
+	margin-left:1.5em;
+	font-size:1.5em;
+}
