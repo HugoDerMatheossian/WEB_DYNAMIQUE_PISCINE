@@ -58,11 +58,20 @@
 		if ($connexion) 
 		{
 			echo "Connexion okay.";
+			$sql = "SELECT ID FROM `vendeurs` WHERE (Pseudo LIKE '%$login%') AND (MotDePasse LIKE '%$pass%')";
+
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$id = $data['ID'];
+
 			//On demarre une session
 			session_start();
 
 			$_SESSION['login'] = $_POST['pseudo'];
 			$_SESSION['pass'] = $_POST['MotDePasse'];
+			$_SESSION['ID']= $id;
+
+
 			echo '<meta http-equiv="refresh" content="5;URL=page vendeur.html">';
 			echo "<br>";
 			echo "Redirection vers la page vendeur personnelle dans 5 secondes";
